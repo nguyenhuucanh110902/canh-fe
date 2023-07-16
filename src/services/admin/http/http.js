@@ -23,6 +23,47 @@ const post = async (url, body) => {
     }
 }
 
+const get = async (url, config) => {
+    try {
+        const res = await instance.get(url,config);
+        return res.data;
+    } catch (error) {
+        handleError(error);
+    }
+}
+
+const put = async (url, config) => {
+    try {
+        const res = await instance.put(url,config);
+        return res.data;
+    } catch (error) {
+        handleError(error);
+    }
+}
+
+const patch = async (url, config) => {
+    try {
+        const res = await instance.patch(url,config);
+        return res.data;
+    } catch (error) {
+        handleError(error);
+    }
+}
+
+const deleteCall = async (url, config) => {
+    try {
+        const res = await instance.delete(url,config);
+        return res.data;
+    } catch (error) {
+        handleError(error);
+    }
+}
+
+
 export {
-    post
+    post,
+    get,
+    put,
+    patch,
+    deleteCall
 }
