@@ -99,3 +99,7 @@ p {
   font-size: 14px;
   color: #777;
 }
+
+.menu_item_active{
+  color: #1677ff !important;
+}

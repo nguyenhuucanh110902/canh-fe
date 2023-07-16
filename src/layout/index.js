@@ -1,5 +1,7 @@
-import { Layout } from "./Layout";
+import { UserLayout } from "./user/UserLayout";
+import {AdminLayout} from './admin';
 
 export {
-    Layout
+    UserLayout,
+    AdminLayout
 }

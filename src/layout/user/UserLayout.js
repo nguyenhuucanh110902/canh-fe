@@ -1,6 +1,6 @@
 import { Header } from "./Header"
 import { Footer } from "./Footer"
-const Layout = ({children}) => {
+const UserLayout = ({children}) => {
     return <>
         <Header>
 
@@ -12,5 +12,5 @@ const Layout = ({children}) => {
 }
 
 export {
-    Layout
+    UserLayout
 }
