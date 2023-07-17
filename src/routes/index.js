@@ -2,7 +2,7 @@ import { AdminLogin } from "../layout/admin"
 import { AdminLayout } from "../layout/admin"
 import { AdminDashBoard } from "../components/admin/Dashboard";
 import { AdminGuard } from "./guards";
-import { BrandList, CategoryList, ColorList, ProductList, SizeList } from "../components/admin";
+import { AddBrand, BrandList, CategoryList, ColorList, ProductList, SizeList } from "../components/admin";
 
 const getAdminRoute = ({path, component}) => {
     return  {
@@ -23,6 +23,7 @@ const adminRoutes = [
         component: AdminDashBoard,
     }),
     getAdminRoute({path: '/admin/brands',component: BrandList}),
+    getAdminRoute({path: '/admin/brands/add',component: AddBrand}),
     getAdminRoute({path: '/admin/categories',component: CategoryList}),
     getAdminRoute({path: '/admin/sizes',component: SizeList}),
     getAdminRoute({path: '/admin/colors',component: ColorList}),

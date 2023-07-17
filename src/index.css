@@ -103,3 +103,8 @@ p {
 .menu_item_active{
   color: #1677ff !important;
 }
+
+.btn:focus {
+    outline: none;
+    border: none;
+}

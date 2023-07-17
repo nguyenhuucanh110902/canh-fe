@@ -1,3 +1,4 @@
+import { AddBrand } from "./Brand/AddBrand/AddBrand";
 import { BrandList } from "./Brand/BrandList";
 import { CategoryList } from "./Category/CategoryList";
 import { ColorList } from "./Color/ColorList";
@@ -11,5 +12,6 @@ export {
     CategoryList,
     ColorList,
     SizeList,
-    ProductList
+    ProductList,
+    AddBrand
 }

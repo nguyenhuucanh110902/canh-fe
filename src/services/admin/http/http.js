@@ -14,7 +14,7 @@ const handleError = (e) => {
     throw new AppApiError(e);
 }
 
-const post = async (url, body) => {
+const post = async (url, body = {}) => {
     try {
         const res = await instance.post(url, body);
         return res.data;
