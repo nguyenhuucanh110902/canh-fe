@@ -1,33 +1,33 @@
 import { useEffect, useState } from "react";
-import "./CategoryList.css";
-import { categoryService } from "../../../services/admin";
+import { materialService } from "../../../services/admin";
+import "./MaterialList.css";
 import { toastService } from "../../../services/common";
 import { Button, Popconfirm } from "antd";
 import { Link } from "react-router-dom";
-const CategoryList = () => {
-  const [categories, setCategories] = useState([]);
+const MaterialList = () => {
+  const [materials, setMaterials] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const body = await categoryService.getAllCategories();
-      setCategories(body.data);
+      const body = await materialService.getAllMaterials();
+      setMaterials(body.data);
     })();
   }, []);
 
-  const handleDelete = async (categoryId) => {
-    const body = await categoryService.deleteCategory(categoryId);
+  const handleDelete = async (materialId) => {
+    const body = await materialService.deleteMaterial(materialId);
     if (body.data === 300) {
-      toastService.info("Danh mục đang được sử dụng");
+      toastService.info("Chất liệu đang được sử dụng");
     } else {
-      toastService.success("Xoá danh mục thành công");
-      setCategories(categories.filter((category) => category.id !== categoryId));
+      toastService.success("Xoá chất liệu thành công");
+      setMaterials(materials.filter((material) => material.id !== materialId));
     }
   };
 
   return (
     <div>
-      <Link to={"/admin/categories/add"}>
-        <Button type="primary">Thêm category</Button>
+      <Link to={"/admin/materials/add"}>
+        <Button type="primary">Thêm chất liệu sản phẩm</Button>
       </Link>
       <table className="mt-3 table table-hover">
         <thead>
@@ -40,16 +40,16 @@ const CategoryList = () => {
           </tr>
         </thead>
         <tbody>
-          {categories.map((category) => {
+          {materials.map((material) => {
             return (
-              <tr key={category.id}>
-                <td>{category.id}</td>
-                <td>{category.name}</td>
-                <td>{category.description}</td>
+              <tr key={material.id}>
+                <td>{material.id}</td>
+                <td>{material.name}</td>
+                <td>{material.description}</td>
                 <td>
                   <div className="actions">
                     <div className="action update">
-                      <Link to={`/admin/categories/update/${category.id}`}>
+                      <Link to={`/admin/materials/update/${material.id}`}>
                         <Button type="primary" className="btn">
                           <i className="fa-regular fa-pen-to-square"></i>
                         </Button>
@@ -57,10 +57,9 @@ const CategoryList = () => {
                     </div>
                     <div className="action delete">
                       <Popconfirm
-                        title="Xoá category"
-                        description="Bạn có chắc chắn muốn xoá Category này?"
-                        onConfirm={() => handleDelete(category.id)}
-                        // onCancel={cancel}
+                        title="Xoá chất liệu"
+                        description="Bạn có chắc chắn muốn xoá chất liệu này?"
+                        onConfirm={() => handleDelete(material.id)}
                         okText="Xoá"
                         cancelText="Huỷ"
                       >
@@ -79,4 +78,4 @@ const CategoryList = () => {
     </div>
   );
 };
-export { CategoryList };
+export { MaterialList };

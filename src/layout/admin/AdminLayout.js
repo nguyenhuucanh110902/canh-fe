@@ -57,6 +57,10 @@ const menus = [
         name: 'Size List'
       },
       {
+        path: 'materials',
+        name: 'Material List'
+      },
+      {
         path: 'products',
         name: 'Product List'
       },

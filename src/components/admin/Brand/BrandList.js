@@ -24,11 +24,6 @@ const BrandList = () => {
     }
   };
 
-  // const handleUpdate = async (brand) => {
-  //     await brandService.updateBrand(brand.id);
-  //     toastService.success('Update successfully')
-  // }
-
   return (
     <div>
       <Link to={"/admin/brands/add"}>

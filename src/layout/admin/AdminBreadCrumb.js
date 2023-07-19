@@ -7,6 +7,7 @@ const breadcrumbNameMap = {
     '/admin/categories': 'Category List',
     '/admin/sizes': 'Size List',
     '/admin/colors': 'Color List',
+    '/admin/materials': 'Material List',
     '/admin/products': 'Product List',
 };
 
