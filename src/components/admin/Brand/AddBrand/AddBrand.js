@@ -7,7 +7,7 @@ const AddBrand = () => {
     const addBrandHandle = async (form) => {
         try {
             brandService.createBrand(form);
-            toastService.success('Add Brand Successfully')
+            toastService.success('Thêm brand thành công')
         } catch (error) {
             console.log(error);
             toastService.error(error.apiMessage);
@@ -20,17 +20,17 @@ const AddBrand = () => {
      labelCol={{ span: 4 }}
      wrapperCol={{ span: 8 }}
     >
-        <Form.Item label="Name" name="name" rules={[{ required: true, message: 'name is required' }]}>
+        <Form.Item label="Tên" name="name" rules={[{ required: true, message: 'Tên không được trống' }]}>
             <Input />
         </Form.Item>
 
-        <Form.Item label="Description" name="description" >
+        <Form.Item label="Mô tả" name="description" >
             <Input/>
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item wrapperCol={{ offset: 4}}>
             <Button type="primary" htmlType="submit">
-                Add Brand
+                Thêm Brand
             </Button>
         </Form.Item>
     </Form>
