@@ -22,7 +22,7 @@ const createColor = async (form) => {
 }
 
 const updateColor = async (form) => {
-    const res = await adminClient.post(`/mv-core/v1/admin/colors/update`, form);
+    const res = await adminClient.post(`/mv-core/v1/admin/colors/update/${form.id}`, form);
     return res;
 }
 

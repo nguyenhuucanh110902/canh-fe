@@ -10,6 +10,8 @@ import { UpdateCategory } from "./Category/UpdateCategory/UpdateCategory";
 import { AdminDashBoard } from "./Dashboard";
 import { ProductList } from "./Product/ProductList";
 import { SizeList } from "./Size/SizeList";
+import { AddSize } from "./Size/AddSize/AddSize";
+import { UpdateSize } from "./Size/UpdateSize/UpdateSize";
 import { MaterialList } from "./Material/MaterialList";
 import { AddMaterial } from "./Material/AddMaterial/AddMaterial";
 import { UpdateMaterial } from "./Material/UpdateMaterial/UpdateMaterial";
@@ -24,6 +26,8 @@ export {
   AddColor,
   UpdateColor,
   SizeList,
+  AddSize,
+  UpdateSize,
   MaterialList,
   AddMaterial,
   UpdateMaterial,

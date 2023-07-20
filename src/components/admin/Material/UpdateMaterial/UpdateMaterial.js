@@ -13,7 +13,7 @@ const UpdateMaterial = () => {
 
   useEffect(() => {
     (async () => {
-      const body = await materialService.getOne(1);
+      const body = await materialService.getOne(materialId);
       console.log(body.name)
       setMaterial(body.data);
       form.setFieldsValue({
